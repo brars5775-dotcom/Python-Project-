@@ -57,3 +57,6 @@ JSON response containing extracted entities, contract details, and risk flags.
 
 ### Benefits
 Reduces review time, improves accuracy, automates repetitive work, and provides hands-on experience with backend development and NLP.
+
+### Version Control
+This project uses GitHub for source code management, issue tracking, and collaboration.
