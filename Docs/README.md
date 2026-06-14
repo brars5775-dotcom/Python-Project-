@@ -54,3 +54,6 @@ Week 4: API serialization, testing, documentation, admin dashboard
 
 ### Expected Output
 JSON response containing extracted entities, contract details, and risk flags.
+
+### Benefits
+Reduces review time, improves accuracy, automates repetitive work, and provides hands-on experience with backend development and NLP.
