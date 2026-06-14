@@ -17,6 +17,15 @@ This project automates the review of legal contracts. Users upload PDF contracts
 | API Testing | Postman |
 | Version Control | GitHub |
 
+### 6. System Modules 
+1.Document Upload Module: Handles PDF file ingestion and validation
+2.PDF Processing Module: Extracts raw text from uploaded documents
+3.NLP Processing Module: Runs spaCy pipeline for entity recognition
+4.Risk Analysis Engine: Identifies and flags risky clauses based on rules
+5.Database Layer: Stores contracts, entities, and risk assessments 
+6.API Layer: Exposes DRF endpoints for upload, processing, and retrieval
+7.Admin Dashboard: UI for manual review and system monitoring
+
 ### Week-wise Plan
 Week 1 –
 👩‍💻 Member 1 (Backend)
