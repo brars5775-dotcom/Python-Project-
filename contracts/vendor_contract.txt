@@ -1,0 +1,17 @@
+VENDOR AGREEMENT
+
+This Vendor Agreement is between XYZ Corp and Vendor Ltd.
+
+1. Payment Terms
+Payment shall be made within 30 days of invoice.
+
+2. Delivery Clause
+Vendor shall deliver goods within 15 business days.
+
+3. Liability Clause
+Vendor liability shall not exceed contract value.
+
+4. Termination Clause
+Either party may terminate this agreement with 60 days notice.
+
+Signed by both parties.
