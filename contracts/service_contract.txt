@@ -1,0 +1,23 @@
+SERVICE AGREEMENT
+
+This Service Agreement is entered into on June 18, 2026, between ABC Solutions ("Service Provider") and XYZ Corporation ("Client").
+
+1. Scope of Services
+The Service Provider agrees to provide software maintenance and technical support services to the Client.
+
+2. Payment Terms
+The Client shall pay the Service Provider ₹50,000 per month. Payments must be made within 15 days of receiving an invoice.
+
+3. Confidentiality
+Both parties agree to keep all business and technical information confidential and not disclose it to any third party.
+
+4. Term and Termination
+This Agreement shall remain in effect for one year. Either party may terminate this Agreement by providing 30 days written notice.
+
+5. Liability
+The Service Provider shall not be liable for indirect or consequential damages arising from the services provided.
+
+6. Governing Law
+This Agreement shall be governed by the laws of India.
+
+Signed by both parties.
