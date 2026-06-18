@@ -2,8 +2,18 @@ from django.http import JsonResponse
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-from .models import Document
-from .serializers import DocumentSerializer
+from .models import (
+    Document,
+    ExtractedClause,
+    RiskFlag
+)
+
+from .serializers import (
+    DocumentSerializer,
+    ExtractedClauseSerializer,
+    RiskFlagSerializer
+)
+
 from .services import parse_contract
 
 import os
@@ -75,7 +85,8 @@ def upload_contract(request):
             "data": serializer.data
         })
 
-    except Exception as e:
+<<<<<<< HEAD
+        except Exception as e:
 
         logger.error(
             f"Upload Error: {str(e)}",
@@ -88,3 +99,48 @@ def upload_contract(request):
             },
             status=500
         )
+
+
+@api_view(["GET"])
+def list_documents(request):
+
+    documents = Document.objects.all()
+
+    serializer = DocumentSerializer(
+        documents,
+        many=True
+    )
+
+    return Response(serializer.data)
+
+
+@api_view(["GET"])
+def view_clauses(request, document_id):
+
+    clauses = ExtractedClause.objects.filter(
+        document_id=document_id
+    )
+
+    serializer = ExtractedClauseSerializer(
+        clauses,
+        many=True
+    )
+
+    return Response(serializer.data)
+
+
+@api_view(["GET"])
+def view_risks(request, document_id):
+
+    risks = RiskFlag.objects.filter(
+        document_id=document_id
+    )
+
+    serializer = RiskFlagSerializer(
+        risks,
+        many=True
+    )
+
+    return Response(serializer.data)
+    
+>>>>>>> fc02632 (Added document, clause and risk listing APIs)
