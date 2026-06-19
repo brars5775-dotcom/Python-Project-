@@ -85,8 +85,7 @@ def upload_contract(request):
             "data": serializer.data
         })
 
-<<<<<<< HEAD
-        except Exception as e:
+    except Exception as e:
 
         logger.error(
             f"Upload Error: {str(e)}",
@@ -143,4 +142,4 @@ def view_risks(request, document_id):
 
     return Response(serializer.data)
     
->>>>>>> fc02632 (Added document, clause and risk listing APIs)
+
