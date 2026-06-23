@@ -27,7 +27,9 @@ This project automates the review of legal contracts. Users upload PDF contracts
 7.Admin Dashboard: UI for manual review and system monitoring
 
 ### Week-wise Plan
-Week 1 –
+
+### Week 1 
+
 👩‍💻 Member 1 (Backend)
 Understand requirements
 Create workflow diagram
