@@ -59,6 +59,15 @@ Week 2: PDF text extraction pipeline
 Week 3: NLP integration and risk detection
 Week 4: API serialization, testing, documentation, admin dashboard
 
+### Testing & Documentation Deliverables
+
+- Test Cases
+- API Testing Report
+- Clause Extraction Accuracy Report
+- Bug Reports
+- Project Documentation
+- Screenshots of System Modules
+- Weekly Progress Report
 
 
 ### Expected Output
