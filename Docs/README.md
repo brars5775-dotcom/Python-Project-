@@ -55,7 +55,13 @@ Create README.md
 Set up project documentation structure
 
 
-Week 2: PDF text extraction pipeline
+### Week 2
+
+- Backend: PDF upload & text extraction
+- Database: Models and data storage
+- NLP: Entity extraction pipeline
+- Testing & Documentation: Test contracts, API testing, accuracy verification, documentation
+
 Week 3: NLP integration and risk detection
 Week 4: API serialization, testing, documentation, admin dashboard
 
