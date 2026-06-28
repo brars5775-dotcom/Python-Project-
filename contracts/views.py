@@ -20,3 +20,19 @@ def document_list(request):
         })
 
     return JsonResponse(data, safe=False)
+def document_detail(request, id):
+    try:
+        document = Document.objects.get(id=id)
+
+        data = {
+            "id": document.id,
+            "name": document.name,
+            "status": document.status,
+            "uploaded_at": document.uploaded_at,
+            "extraction_timestamp": document.extraction_timestamp
+        }
+
+        return JsonResponse(data)
+
+    except Document.DoesNotExist:
+        return JsonResponse({"error": "Document not found"}, status=404)
