@@ -24,6 +24,7 @@ logger = logging.getLogger(__name__)
 
 def home(request):
     return JsonResponse({
+        "status": "success",
         "message": "Contract Parsing API is running"
     })
 
@@ -33,6 +34,7 @@ def upload_contract(request):
 
     if request.method == "GET":
         return Response({
+            "status": "success",
             "message": "Upload a file using POST."
         })
 
@@ -42,7 +44,10 @@ def upload_contract(request):
 
         if not uploaded_file:
             return Response(
-                {"error": "No file uploaded"},
+                {
+                    "status": "error",
+                    "message": "No file uploaded."
+                },
                 status=400
             )
 
@@ -55,7 +60,8 @@ def upload_contract(request):
         if extension not in ALLOWED_EXTENSIONS:
             return Response(
                 {
-                    "error": "Only PDF, DOCX and TXT files are allowed."
+                    "status": "error",
+                    "message": "Only PDF, DOCX and TXT files are allowed."
                 },
                 status=400
             )
@@ -79,7 +85,8 @@ def upload_contract(request):
         serializer = DocumentSerializer(document)
 
         return Response({
-            "message": "File uploaded successfully",
+            "status": "success",
+            "message": "File uploaded successfully.",
             "document_id": document.id,
             "filename": document.filename,
             "data": serializer.data
@@ -94,7 +101,8 @@ def upload_contract(request):
 
         return Response(
             {
-                "error": "Something went wrong while processing the file."
+                "status": "error",
+                "message": "Something went wrong while processing the file."
             },
             status=500
         )
@@ -110,7 +118,36 @@ def list_documents(request):
         many=True
     )
 
-    return Response(serializer.data)
+    return Response({
+        "status": "success",
+        "message": "Documents retrieved successfully.",
+        "count": documents.count(),
+        "data": serializer.data
+    })
+
+
+@api_view(["GET"])
+def document_detail(request, document_id):
+
+    try:
+        document = Document.objects.get(id=document_id)
+
+    except Document.DoesNotExist:
+        return Response(
+            {
+                "status": "error",
+                "message": "Document not found."
+            },
+            status=404
+        )
+
+    serializer = DocumentSerializer(document)
+
+    return Response({
+        "status": "success",
+        "message": "Document retrieved successfully.",
+        "data": serializer.data
+    })
 
 
 @api_view(["GET"])
@@ -125,7 +162,12 @@ def view_clauses(request, document_id):
         many=True
     )
 
-    return Response(serializer.data)
+    return Response({
+        "status": "success",
+        "message": "Clauses retrieved successfully.",
+        "count": clauses.count(),
+        "data": serializer.data
+    })
 
 
 @api_view(["GET"])
@@ -140,6 +182,35 @@ def view_risks(request, document_id):
         many=True
     )
 
-    return Response(serializer.data)
-    
+    return Response({
+        "status": "success",
+        "message": "Risk flags retrieved successfully.",
+        "count": risks.count(),
+        "data": serializer.data
+    })
 
+
+@api_view(["DELETE"])
+def delete_document(request, document_id):
+
+    try:
+        document = Document.objects.get(id=document_id)
+
+    except Document.DoesNotExist:
+        return Response(
+            {
+                "status": "error",
+                "message": "Document not found."
+            },
+            status=404
+        )
+
+    document.delete()
+
+    return Response(
+        {
+            "status": "success",
+            "message": "Document deleted successfully."
+        },
+        status=200
+    )
